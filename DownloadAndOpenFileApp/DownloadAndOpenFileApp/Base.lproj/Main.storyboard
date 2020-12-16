@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YR1-AV-zdE">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DownloadAndOpenFileApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEs-qV-zKS">
+                                <rect key="frame" x="78" y="332" width="258" height="46"/>
+                                <color key="backgroundColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="Download File">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="downloadFileButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2fm-AR-4WL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8JS-G0-ji8">
+                                <rect key="frame" x="78" y="425" width="258" height="46"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="Open File">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="openFileButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6NS-Zx-SCD"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="cfp-KQ-tCg">
+                                <rect key="frame" x="188.5" y="248" width="37" height="37"/>
+                                <color key="color" systemColor="linkColor"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="fEs-qV-zKS" secondAttribute="trailing" id="1Ch-F6-jkp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="8JS-G0-ji8" secondAttribute="trailing" id="4eF-cT-lpv"/>
+                            <constraint firstItem="8JS-G0-ji8" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="BZs-KY-38n"/>
+                            <constraint firstItem="8JS-G0-ji8" firstAttribute="top" secondItem="fEs-qV-zKS" secondAttribute="bottom" constant="47" id="H7B-Rp-iog"/>
+                            <constraint firstItem="fEs-qV-zKS" firstAttribute="top" secondItem="cfp-KQ-tCg" secondAttribute="bottom" constant="47" id="IUb-yK-FTA"/>
+                            <constraint firstItem="cfp-KQ-tCg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XQp-QR-E5s"/>
+                            <constraint firstItem="8JS-G0-ji8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="78" id="abR-zr-eac"/>
+                            <constraint firstItem="fEs-qV-zKS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="78" id="hds-HG-vM7"/>
+                            <constraint firstItem="fEs-qV-zKS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jgg-Mc-haw"/>
+                            <constraint firstItem="8JS-G0-ji8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uGd-a1-dWA"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="LjJ-Uo-iEI"/>
+                    <connections>
+                        <outlet property="acivityIndicator" destination="cfp-KQ-tCg" id="RkC-BE-nBf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="786.95652173913049" y="61.607142857142854"/>
+        </scene>
+        <!--Reader View Controller-->
+        <scene sceneID="LLg-B8-iWg">
+            <objects>
+                <viewController storyboardIdentifier="pDFReaderViewController" id="yQz-HS-IoE" customClass="PDFReaderViewController" customModule="DownloadAndOpenFileApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aGY-UL-Xxw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="izn-yt-1gp"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="4zK-Ov-liA"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2CA-97-Phz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1660.8695652173915" y="-7.3660714285714279"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="CdO-YK-4NW">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YR1-AV-zdE" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="IJq-3k-RND">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="j91-iz-apF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZC6-aW-dPR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-123.18840579710145" y="61.607142857142854"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
